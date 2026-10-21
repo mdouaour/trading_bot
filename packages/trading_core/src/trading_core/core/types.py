@@ -259,4 +259,11 @@ class RiskContext(UTCModel):
     symbol: SymbolSpecification
     open_positions: list[Position] = Field(default_factory=list)
     pending_orders: list[Order] = Field(default_factory=list)
+    quote: Quote | None = None
+    daily_pnl: Decimal | None = None
+    account_drawdown: Decimal | None = None
+    broker_healthy: bool = True
+    market_data_timestamp: datetime | None = None
+    session_allowed: bool = True
+    duplicate_order: bool = False
     as_of: datetime
